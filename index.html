@@ -1,193 +1,201 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Shell Tools and Scripting - by Shiyaf C</title>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Shell Tools and Scripting - by Shiyaf C</title>
+    <!-- Add author meta tags -->
+    <meta name="author" content="Shiyaf C" />
+    <meta
+      name="description"
+      content="Shell Tools and Scripting presentation by Shiyaf C"
+    />
 
-  <!-- Add author meta tags -->
-  <meta name="author" content="Shiyaf C" />
-  <meta name="description" content="Shell Tools and Scripting presentation by Shiyaf C" />
+    <link rel="stylesheet" href="../dist/reveal.css" />
+    <link rel="stylesheet" href="../dist/theme/night.css" id="theme" />
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css" />
 
-  <link rel="stylesheet" href="../dist/reveal.css" />
-  <link rel="stylesheet" href="../dist/theme/night.css" id="theme" />
-  <link rel="stylesheet" href="../plugin/highlight/monokai.css" />
-
-  <!-- Custom styles -->
-  <style>
-    .reveal pre {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      border-radius: 5px;
-    }
-
-    .reveal h1,
-    .reveal h2 {
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Solution hint styling */
-    .solution-hint {
-      background: linear-gradient(45deg, #2980b9, #3498db);
-      padding: 10px 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-      display: inline-block;
-      font-size: 0.8em;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      border-left: 5px solid #e74c3c;
-      animation: glow 2s infinite alternate;
-    }
-
-    .solution-hint .arrow {
-      display: inline-block;
-      margin-left: 10px;
-      animation: bounce 1s infinite;
-      font-size: 1.0em;
-    }
-
-
-    /* More arrow styling */
-    .more-arrow {
-      animation: bounce 1s infinite;
-      font-size: 1.3em;
-    }
-
-    @keyframes bounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
+    <!-- Custom styles -->
+    <style>
+      .reveal pre {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
       }
 
-      50% {
-        transform: translateY(-5px);
+      .reveal h1,
+      .reveal h2 {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
       }
-    }
 
-    @keyframes glow {
-      from {
+      /* Solution hint styling */
+      .solution-hint {
+        background: linear-gradient(45deg, #2980b9, #3498db);
+        padding: 10px 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+        display: inline-block;
+        font-size: 0.8em;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border-left: 5px solid #e74c3c;
+        animation: glow 2s infinite alternate;
       }
 
-      to {
-        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.5);
+      .solution-hint .arrow {
+        display: inline-block;
+        margin-left: 10px;
+        animation: bounce 1s infinite;
+        font-size: 1em;
       }
-    }
 
-    /* Rest of your existing styles */
-    .reveal .progress {
-      height: 5px;
-    }
+      /* More arrow styling */
+      .more-arrow {
+        animation: bounce 1s infinite;
+        font-size: 1.3em;
+      }
 
-    .code-wrapper {
-      position: relative;
-    }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
 
-    .copy-button {
-      position: absolute;
-      right: 0;
-      top: 0;
-      padding: 8px;
-      background-color: rgba(0, 0, 0, 0.3);
-      border: none;
-      color: white;
-      cursor: pointer;
-      border-radius: 0 5px 0 5px;
-    }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
 
-    .copy-button:hover {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+      @keyframes glow {
+        from {
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
 
-    /* Update the slide number positioning */
-    .reveal .slide-number {
-      position: fixed;
-      top: 8px;
-      right: 8px;
-      z-index: 31;
-      font-size: 16px;
-      background-color: transparent;
-      color: #fff;
-      opacity: 0.7;
-    }
+        to {
+          box-shadow: 0 4px 15px rgba(52, 152, 219, 0.5);
+        }
+      }
 
-    .reveal .slide-number:hover {
-      opacity: 1;
-    }
-  </style>
-</head>
+      /* Rest of your existing styles */
+      .reveal .progress {
+        height: 5px;
+      }
 
-<body>
-  <div class="reveal">
-    <div class="slides">
-      <section data-markdown="shell-lecture.md" data-separator="^---$" data-separator-vertical="^--$"
-        data-separator-notes="^Note:"></section>
+      .code-wrapper {
+        position: relative;
+      }
 
-      <section data-markdown="shell-tools-lecture.md" data-separator="^---$" data-separator-vertical="^--$"
-        data-separator-notes="^Note:"></section>
+      .copy-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 8px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 0 5px 0 5px;
+      }
+
+      .copy-button:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      /* Update the slide number positioning */
+      .reveal .slide-number {
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        z-index: 31;
+        font-size: 16px;
+        background-color: transparent;
+        color: #fff;
+        opacity: 0.7;
+      }
+
+      .reveal .slide-number:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="markdown/shell-lecture.md"
+          data-separator="^---$"
+          data-separator-vertical="^--$"
+          data-separator-notes="^Note:"
+        ></section>
+
+        <section
+          data-markdown="markdown/shell-tools-lecture.md"
+          data-separator="^---$"
+          data-separator-vertical="^--$"
+          data-separator-notes="^Note:"
+        ></section>
+      </div>
     </div>
-  </div>
 
-  <script src="../dist/reveal.js"></script>
-  <script src="../plugin/markdown/markdown.js"></script>
-  <script src="../plugin/highlight/highlight.js"></script>
-  <script src="../plugin/notes/notes.js"></script>
-  <script src="../plugin/math/math.js"></script>
-  <script src="../plugin/zoom/zoom.js"></script>
+    <script src="../dist/reveal.js"></script>
+    <script src="../plugin/markdown/markdown.js"></script>
+    <script src="../plugin/highlight/highlight.js"></script>
+    <script src="../plugin/notes/notes.js"></script>
+    <script src="../plugin/math/math.js"></script>
+    <script src="../plugin/zoom/zoom.js"></script>
 
-  <script>
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
-      slideNumber: true,
-      hash: true,
-      mouseWheel: false,
-      transition: 'slide',
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+        hash: true,
+        mouseWheel: false,
+        transition: "slide",
 
-      // Enable features
-      highlight: {
-        escapeHTML: false
-      },
+        // Enable features
+        highlight: {
+          escapeHTML: false,
+        },
 
-      // Custom configurations
-      width: 1200,
-      margin: 0.1,
+        // Custom configurations
+        width: 1200,
+        margin: 0.1,
 
-      plugins: [
-        RevealMarkdown,
-        RevealHighlight,
-        RevealNotes,
-        RevealMath.KaTeX,
-        RevealZoom
-      ],
-    });
-
-    // Add copy buttons to code blocks
-    window.addEventListener('load', function () {
-      document.querySelectorAll('pre code').forEach((block) => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'code-wrapper';
-        block.parentNode.insertBefore(wrapper, block);
-        wrapper.appendChild(block);
-
-        const button = document.createElement('button');
-        button.className = 'copy-button';
-        button.textContent = 'Copy';
-
-        button.addEventListener('click', async () => {
-          await navigator.clipboard.writeText(block.textContent);
-          button.textContent = 'Copied!';
-          setTimeout(() => {
-            button.textContent = 'Copy';
-          }, 2000);
-        });
-
-        wrapper.appendChild(button);
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealZoom,
+        ],
       });
-    });
-  </script>
-</body>
 
+      // Add copy buttons to code blocks
+      window.addEventListener("load", function () {
+        document.querySelectorAll("pre code").forEach((block) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = "code-wrapper";
+          block.parentNode.insertBefore(wrapper, block);
+          wrapper.appendChild(block);
+
+          const button = document.createElement("button");
+          button.className = "copy-button";
+          button.textContent = "Copy";
+
+          button.addEventListener("click", async () => {
+            await navigator.clipboard.writeText(block.textContent);
+            button.textContent = "Copied!";
+            setTimeout(() => {
+              button.textContent = "Copy";
+            }, 2000);
+          });
+
+          wrapper.appendChild(button);
+        });
+      });
+    </script>
+  </body>
 </html>
+

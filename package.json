@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "gulp serve",
-    "build": "gulp build"
+    "build": "gulp build",
+    "package": "gulp package"
   },
   "repository": {
     "type": "git",
@@ -101,3 +102,4 @@
     }
   }
 }
+
